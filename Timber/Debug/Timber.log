@@ -1,0 +1,6 @@
+﻿  Timber.cpp
+C:\Users\Anton\Desktop\Projects\Programming\Timber\Timber.cpp(16,32): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\Anton\Desktop\Projects\Programming\Timber\Timber.cpp(24,26): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\Anton\Desktop\Projects\Programming\Timber\Timber.cpp(32,25): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\Anton\Desktop\Projects\Programming\Timber\Timber.cpp(44,27): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  Timber.vcxproj -> C:\Users\Anton\Desktop\Projects\Programming\Timber\Debug\Timber.exe
