@@ -7,29 +7,44 @@ using namespace Keyboard;
 
 int main()
 {
-	VideoMode vm({ 1920, 1080 }); //создание объекта vm из класса VideoMode
+	VideoMode vm({ 2560, 1080 }); //создание объекта vm из класса VideoMode
 	RenderWindow window(vm, "Timber!", State::Fullscreen); //создание объекта window из класса RenderWindow
+
+	// создание текстуры
+
+	Texture textureBackground; //создание текстуры для хранения изображения в GPU
+	if (!textureBackground.loadFromFile("graphics/background.jpg")) //загрузка текстуры
+	{
+		cout << "Background texture loading error" << endl;
+	}
 
 	// создание спрайта текстуры
 
-	Texture textureBackground; //создание текстуры для хранения изображения в GPU
-	textureBackground.loadFromFile("graphics/background.jpg"); //загрузка текстуры
-
 	Sprite spriteBackground(textureBackground); //создание спрайта и привязка текстуры
-	spriteBackground.setPosition({ 0,0 }); //установка позиции спрайта в верхний левый угол
+	spriteBackground.setPosition({ 0,0 }); //установка позиции спрайта в верхний левый  угол
 
-	// создание спрайта дерева
+	// создание текстуры дерева
 
 	Texture textureTree;
-	textureTree.loadFromFile("graphics/tree2.png");
+	if (!textureTree.loadFromFile("graphics/tree2.png"))
+	{
+		cout << "Texture tree load error" << endl;
+	}
+
+	// создание спрайта дерева
 
 	Sprite spriteTree(textureTree);
 	spriteTree.setPosition({ 810,0 });
 
-	// создание спрайта пчелы
+	// создание текстуры пчелы
 
 	Texture textureBee;
-	textureBee.loadFromFile("graphics/bee.png");
+	if (!textureBee.loadFromFile("graphics/bee.png"))
+	{
+		cout << "Texture bee load error";
+	}
+
+	// создание спрайта пчелы
 
 	Sprite spriteBee(textureBee);
 	spriteBee.setPosition({ 400,800 });
@@ -38,10 +53,15 @@ int main()
 
 	float beeSpeed = 0.0f;
 
-	// создание спрайта облаков
+	// создание текстуры облаков
 
 	Texture textureCloud;
-	textureCloud.loadFromFile("graphics/cloud.png");
+	if (!textureCloud.loadFromFile("graphics/cloud.png"))
+	{
+		cout << "Texture cloud load error";
+	}
+
+	// создание спрайтов облаков
 
 	Sprite spriteCloud1(textureCloud);
 	Sprite spriteCloud2(textureCloud);
@@ -58,6 +78,8 @@ int main()
 	float cloud1Speed = 0.0f;
 	float cloud2Speed = 0.0f;
 	float cloud3Speed = 0.0f;
+
+
 
 	// отрисовка
 
